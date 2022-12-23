@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "1ff1b210-2f97-45a6-acd4-a673177ca3f5",
+		"name": "cache",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Spring cache",
+			"item": [
+				{
+					"name": "Put key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"spring-value\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"spring",
+								"{{provider}}",
+								":cache",
+								":key"
+							],
+							"query": [
+								{
+									"key": "ifAbsent",
+									"value": "true",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "spring"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"spring",
+								"{{provider}}",
+								":cache",
+								":key"
+							],
+							"query": [
+								{
+									"key": "timeout",
+									"value": "31",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "spring"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evict key",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"spring",
+								"{{provider}}",
+								":cache",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "spring"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JSR107 cache",
+			"item": [
+				{
+					"name": "Put key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\"jsr-value\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"jsr107",
+								"{{provider}}",
+								":cache",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "jsr107"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"jsr107",
+								"{{provider}}",
+								":cache",
+								":key"
+							],
+							"query": [
+								{
+									"key": "timeout",
+									"value": "31",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "jsr107"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get and remove key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key/get-and-remove",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"jsr107",
+								"{{provider}}",
+								":cache",
+								":key",
+								"get-and-remove"
+							],
+							"query": [
+								{
+									"key": "timeout",
+									"value": "60",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "jsr107"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove key",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"cache",
+								"jsr107",
+								"{{provider}}",
+								":cache",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "cache",
+									"value": "jsr107"
+								},
+								{
+									"key": "key",
+									"value": "key"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost",
+			"type": "default"
+		},
+		{
+			"key": "port",
+			"value": "port",
+			"type": "default"
+		},
+		{
+			"key": "provider",
+			"value": "redis",
+			"type": "default"
+		}
+	]
+}
