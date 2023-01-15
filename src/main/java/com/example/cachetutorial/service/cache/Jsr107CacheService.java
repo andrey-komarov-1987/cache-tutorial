@@ -1,4 +1,4 @@
-package com.example.cachetutorial.service;
+package com.example.cachetutorial.service.cache;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

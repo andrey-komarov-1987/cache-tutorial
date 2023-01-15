@@ -1,6 +1,6 @@
-package com.example.cachetutorial.api;
+package com.example.cachetutorial.api.cache;
 
-import com.example.cachetutorial.service.Jsr107CacheService;
+import com.example.cachetutorial.service.cache.Jsr107CacheService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

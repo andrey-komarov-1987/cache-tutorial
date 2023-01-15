@@ -1,4 +1,4 @@
-package com.example.cachetutorial.service;
+package com.example.cachetutorial.service.cache;
 
 import com.github.benmanes.caffeine.jcache.spi.CaffeineCachingProvider;
 import lombok.RequiredArgsConstructor;

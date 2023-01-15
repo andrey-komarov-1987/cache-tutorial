@@ -48,7 +48,6 @@ public class CacheConfig {
         return new CaffeineCachingProvider();
     }
 
-
     @Bean(destroyMethod="shutdown")
     RedissonClient redissonClient(@Value("classpath:/redisson-jcache.yaml") Resource configFile) throws IOException {
         try (InputStream inputStream = configFile.getInputStream()) {

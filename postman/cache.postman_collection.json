@@ -6,283 +6,1073 @@
 	},
 	"item": [
 		{
-			"name": "Spring cache",
+			"name": "Cache",
 			"item": [
 				{
-					"name": "Put key",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\"spring-value\"",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Spring cache",
+					"item": [
+						{
+							"name": "Put key",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"spring-value\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"spring",
+										"{{provider}}",
+										":cache",
+										":key"
+									],
+									"query": [
+										{
+											"key": "ifAbsent",
+											"value": "true",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "spring"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"spring",
-								"{{provider}}",
-								":cache",
-								":key"
-							],
-							"query": [
-								{
-									"key": "ifAbsent",
-									"value": "true",
-									"disabled": true
+						{
+							"name": "Get key",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"spring",
+										"{{provider}}",
+										":cache",
+										":key"
+									],
+									"query": [
+										{
+											"key": "timeout",
+											"value": "31",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "spring"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
 								}
-							],
-							"variable": [
-								{
-									"key": "cache",
-									"value": "spring"
-								},
-								{
-									"key": "key",
-									"value": "key"
+							},
+							"response": []
+						},
+						{
+							"name": "Evict key",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"spring",
+										"{{provider}}",
+										":cache",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "spring"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
 								}
-							]
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Get key",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"spring",
-								"{{provider}}",
-								":cache",
-								":key"
-							],
-							"query": [
-								{
-									"key": "timeout",
-									"value": "31",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "cache",
-									"value": "spring"
+					"name": "JSR107 cache",
+					"item": [
+						{
+							"name": "Put key",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"jsr-value\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "key",
-									"value": "key"
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"jsr107",
+										"{{provider}}",
+										":cache",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "jsr107"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Get key",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"jsr107",
+										"{{provider}}",
+										":cache",
+										":key"
+									],
+									"query": [
+										{
+											"key": "timeout",
+											"value": "31",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "jsr107"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get and remove key",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key/get-and-remove",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"jsr107",
+										"{{provider}}",
+										":cache",
+										":key",
+										"get-and-remove"
+									],
+									"query": [
+										{
+											"key": "timeout",
+											"value": "60",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "jsr107"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove key",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"cache",
+										"jsr107",
+										"{{provider}}",
+										":cache",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "cache",
+											"value": "jsr107"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Evict key",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/spring/{{provider}}/:cache/:key",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"spring",
-								"{{provider}}",
-								":cache",
-								":key"
-							],
-							"variable": [
+					"name": "Redisson",
+					"item": [
+						{
+							"name": "RLocalCachedMap",
+							"item": [
 								{
-									"key": "cache",
-									"value": "spring"
+									"name": "Get options",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/options",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"options"
+											]
+										}
+									},
+									"response": []
 								},
 								{
-									"key": "key",
-									"value": "key"
+									"name": "Update options",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"reconnectionStrategy\": \"CLEAR\",\r\n    \"syncStrategy\": \"INVALIDATE\",\r\n    \"evictionPolicy\": \"NONE\",\r\n    \"cacheProvider\": \"REDISSON\",\r\n    \"storeMode\": \"LOCALCACHE_REDIS\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/options",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												"options"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Preload cache",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache/local",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache",
+												"local"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-local-cached-map"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get local cache",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache/local",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache",
+												"local"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-local-cached-map"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Clear local cache",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache/local",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache",
+												"local"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Put key",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"redisson-value\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache/:key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache",
+												":key"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-local-cached-map"
+												},
+												{
+													"key": "key",
+													"value": "key"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get key",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache/:key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache",
+												":key"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-local-cached-map"
+												},
+												{
+													"key": "key",
+													"value": "key"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Remove key",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache/:key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache",
+												":key"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-local-cached-map"
+												},
+												{
+													"key": "key",
+													"value": "key"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Fast remove keys",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-local-cached-map/:cache?keys=key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-local-cached-map",
+												":cache"
+											],
+											"query": [
+												{
+													"key": "keys",
+													"value": "key"
+												}
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-local-cached-map"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "RMapCache",
+							"item": [
+								{
+									"name": "Put key",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"redisson-value\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-map-cache/:cache/:key?ttl=30",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-map-cache",
+												":cache",
+												":key"
+											],
+											"query": [
+												{
+													"key": "ttl",
+													"value": "30"
+												}
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-map-cache"
+												},
+												{
+													"key": "key",
+													"value": "key"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get key",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-map-cache/:cache/:key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-map-cache",
+												":cache",
+												":key"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-map-cache"
+												},
+												{
+													"key": "key",
+													"value": "key"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Remove key",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-map-cache/:cache/:key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-map-cache",
+												":cache",
+												":key"
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-map-cache"
+												},
+												{
+													"key": "key",
+													"value": "key"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Fast remove keys",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{host}}:{{port}}/cache/redisson/r-map-cache/:cache?keys=key",
+											"host": [
+												"{{host}}"
+											],
+											"port": "{{port}}",
+											"path": [
+												"cache",
+												"redisson",
+												"r-map-cache",
+												":cache"
+											],
+											"query": [
+												{
+													"key": "keys",
+													"value": "key"
+												}
+											],
+											"variable": [
+												{
+													"key": "cache",
+													"value": "r-map-cache"
+												}
+											]
+										}
+									},
+									"response": []
 								}
 							]
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
 		{
-			"name": "JSR107 cache",
+			"name": "Lock",
 			"item": [
 				{
-					"name": "Put key",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\"jsr-value\"",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Redisson",
+					"item": [
+						{
+							"name": "Lock",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/lock/redisson/:name?lease=30&duration=15",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"lock",
+										"redisson",
+										":name"
+									],
+									"query": [
+										{
+											"key": "lease",
+											"value": "30"
+										},
+										{
+											"key": "duration",
+											"value": "15"
+										}
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "{{lock_name}}"
+										}
+									]
 								}
-							}
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"jsr107",
-								"{{provider}}",
-								":cache",
-								":key"
-							],
-							"variable": [
-								{
-									"key": "cache",
-									"value": "jsr107"
+						{
+							"name": "Lock 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"jsr-value\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "key",
-									"value": "key"
+								"url": {
+									"raw": "{{host}}:{{port}}/lock/redisson/:name?lease=30&duration=15",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"lock",
+										"redisson",
+										":name"
+									],
+									"query": [
+										{
+											"key": "lease",
+											"value": "30"
+										},
+										{
+											"key": "duration",
+											"value": "15"
+										}
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "{{lock_name}}"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Multi lock",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\"lock-1\", \"lock-2\", \"lock-3\"]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/lock/redisson?lease=30&duration=15",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"lock",
+										"redisson"
+									],
+									"query": [
+										{
+											"key": "lease",
+											"value": "30"
+										},
+										{
+											"key": "duration",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Multi lock 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\"lock-2\", \"lock-1\"]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/lock/redisson?lease=30&duration=15",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"lock",
+										"redisson"
+									],
+									"query": [
+										{
+											"key": "lease",
+											"value": "30"
+										},
+										{
+											"key": "duration",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
+					]
+				}
+			]
+		},
+		{
+			"name": "Keys",
+			"item": [
 				{
-					"name": "Get key",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"jsr107",
-								"{{provider}}",
-								":cache",
-								":key"
-							],
-							"query": [
-								{
-									"key": "timeout",
-									"value": "31",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "cache",
-									"value": "jsr107"
+					"name": "Redisson",
+					"item": [
+						{
+							"name": "Set key",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"redisson-value\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "key",
-									"value": "key"
+								"url": {
+									"raw": "{{host}}:{{port}}/keys/redisson/:prefix/:key?ttl=6",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"keys",
+										"redisson",
+										":prefix",
+										":key"
+									],
+									"query": [
+										{
+											"key": "ttl",
+											"value": "6"
+										},
+										{
+											"key": "ifExists",
+											"value": "true",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "prefix",
+											"value": "redisson"
+										},
+										{
+											"key": "key",
+											"value": "key-2"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "Get key",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/keys/redisson/:prefix/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"keys",
+										"redisson",
+										":prefix",
+										":key"
+									],
+									"query": [
+										{
+											"key": "remove",
+											"value": "true",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "prefix",
+											"value": "redisson"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove key",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/keys/redisson/:prefix/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"keys",
+										"redisson",
+										":prefix",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "prefix",
+											"value": "redisson"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Exists key",
+							"request": {
+								"method": "HEAD",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/keys/redisson/:prefix/:key",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"keys",
+										"redisson",
+										":prefix",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "prefix",
+											"value": "redisson"
+										},
+										{
+											"key": "key",
+											"value": "key"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all keys",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{port}}/keys/redisson/:prefix",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"keys",
+										"redisson",
+										":prefix"
+									],
+									"variable": [
+										{
+											"key": "prefix",
+											"value": "redisson"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get and remove key",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key/get-and-remove",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"jsr107",
-								"{{provider}}",
-								":cache",
-								":key",
-								"get-and-remove"
-							],
-							"query": [
-								{
-									"key": "timeout",
-									"value": "60",
-									"disabled": true
-								}
-							],
-							"variable": [
-								{
-									"key": "cache",
-									"value": "jsr107"
-								},
-								{
-									"key": "key",
-									"value": "key"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove key",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{host}}:{{port}}/cache/jsr107/{{provider}}/:cache/:key",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"cache",
-								"jsr107",
-								"{{provider}}",
-								":cache",
-								":key"
-							],
-							"variable": [
-								{
-									"key": "cache",
-									"value": "jsr107"
-								},
-								{
-									"key": "key",
-									"value": "key"
-								}
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		}
@@ -315,12 +1105,17 @@
 		},
 		{
 			"key": "port",
-			"value": "port",
+			"value": "8080",
 			"type": "default"
 		},
 		{
 			"key": "provider",
 			"value": "redis",
+			"type": "default"
+		},
+		{
+			"key": "lock_name",
+			"value": "lock_name",
 			"type": "default"
 		}
 	]
